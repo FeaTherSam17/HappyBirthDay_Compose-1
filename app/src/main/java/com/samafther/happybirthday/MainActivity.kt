@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -33,10 +34,16 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     containerColor = MaterialTheme.colorScheme.background
                 ) { innerPadding ->
-                    GreetingText(
+                    /*GreetingText(
                         message = "Happy Birthday Erika!!",
                         from = "From Sam <3",
                         modifier = Modifier.padding(innerPadding))
+                     */
+                    GreetingImage(
+                        message = "Happy Birthday Violet",
+                        from = "From Sam <3",
+                        modifier = Modifier.padding(innerPadding)
+                    )
                 }
             }
         }
@@ -52,7 +59,7 @@ fun GreetingText(modifier: Modifier = Modifier,message: String, from: String){
         Text(
             //modifier = modifier
             text = message,
-            fontSize = 100.sp,
+            fontSize = 90.sp,
             lineHeight = 116.sp,
             textAlign = TextAlign.Center
         )
@@ -69,10 +76,19 @@ fun GreetingText(modifier: Modifier = Modifier,message: String, from: String){
 @Composable
 fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier){
     val image = painterResource(R.drawable.androidparty) //Toma el ID de recurso como argumento
-    Image(
-        painter = image,
-        contentDescription = null
-    )
+    Box(modifier){
+        Image(
+            painter = image,
+            contentDescription = null
+        )
+        GreetingText(
+            message = "Happy Birthday Violet",
+            from = "From Sam <3",
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(4.dp)
+        )
+    }
 }
 
 
