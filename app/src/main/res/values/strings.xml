@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Happy Birthday</string>
+    <string name="happy_birthday_text">Happy Birthday Violet</string>
+    <string name="signature_text"><![CDATA[From Sam <3]]></string>
 </resources>
